@@ -37,3 +37,16 @@ func main() {
 	fmt.Println(cap(slice2))
 	fmt.Println(slice2)
 }
+
+/*
+切片的三种使用方式
+1.定义一个切片，然后用该切片去引用一个已经创建好的数组
+var arr = []
+2.通过make来创建切片
+3.定义一个切片，直接就指定具体数组
+var slice []int = []int{2, 3, 9}
+切片的遍历
+1.for
+2.for range
+如上。
+*/
