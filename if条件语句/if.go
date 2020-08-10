@@ -1,5 +1,7 @@
 package main
+
 import "fmt"
+
 func main() {
 	// 基本的例子
 	if 7%2 == 0 {

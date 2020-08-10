@@ -11,12 +11,12 @@ var HEADER_FIELD_UNAME = "X-User-Name"
 
 func validateUserSession(r *http.Request) bool {
 	sid := r.Header.Get(HEADER_FIELD_SESSION)
-	if len(sid) == 0{
+	if len(sid) == 0 {
 		return false
 	}
 
 	uname, ok := session.IsSessionExpired(sid)
-	if ok{
+	if ok {
 		return false
 	}
 
@@ -26,7 +26,7 @@ func validateUserSession(r *http.Request) bool {
 
 func ValidateUser(w http.ResponseWriter, r *http.Request) bool {
 	uname := r.Header.Get(HEADER_FIELD_UNAME)
-	if len(uname) == 0{
+	if len(uname) == 0 {
 		sendErrorResponse(w, defs.ErrorNotAuthUser)
 		return false
 	}

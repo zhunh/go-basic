@@ -1,6 +1,8 @@
 package main
+
 import "time"
 import "fmt"
+
 func main() {
 	// 在这个例子中，假设我们执行了一个外部调用，2秒之后将结果写入c1
 	c1 := make(chan string, 1)

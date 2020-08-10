@@ -1,16 +1,19 @@
 package main
+
 import "encoding/json"
 import "fmt"
 import "os"
+
 // 我们使用两个结构体来演示自定义数据类型的JSON数据编码和解码。
 type Response1 struct {
-	Page int
+	Page   int
 	Fruits []string
 }
 type Response2 struct {
-	Page int `json:"page"`
+	Page   int      `json:"page"`
 	Fruits []string `json:"fruits"`
 }
+
 func main() {
 	// 首先我们看一下将基础数据类型编码为JSON数据
 	bolB, _ := json.Marshal(true)
@@ -32,13 +35,13 @@ func main() {
 	// 类型中的可导出成员的值并且默认情况下，这些成员名称都作
 	// 为JSON数据的键
 	res1D := &Response1{
-		Page: 1,
+		Page:   1,
 		Fruits: []string{"apple", "peach", "pear"}}
 	res1B, _ := json.Marshal(res1D)
 	fmt.Println(string(res1B))
 	// 你可以使用tag来自定义编码后JSON键的名称
 	res2D := &Response2{
-		Page: 1,
+		Page:   1,
 		Fruits: []string{"apple", "peach", "pear"}}
 	res2B, _ := json.Marshal(res2D)
 	fmt.Println(string(res2B))
